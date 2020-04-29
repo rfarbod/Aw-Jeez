@@ -7,7 +7,9 @@ target 'AwJeez!' do
 
   # Pods for AwJeez!
   pod 'Hero'
-  pod 'Alamofire', '~> 5.1'
+  pod 'Alamofire', '~> 4.7'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
-
+  pod 'Arrow'
+  pod 'ReachabilitySwift', :git => 'https://github.com/ashleymills/Reachability.swift', :branch => 'develop'
+  pod 'Kingfisher'
 end

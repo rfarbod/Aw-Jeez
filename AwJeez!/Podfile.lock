@@ -1,32 +1,51 @@
 PODS:
-  - Alamofire (5.1.0)
+  - Alamofire (4.9.1)
+  - Arrow (5.1.1)
   - Hero (1.5.0)
+  - Kingfisher (5.12.0):
+    - Kingfisher/Core (= 5.12.0)
+  - Kingfisher/Core (5.12.0)
+  - ReachabilitySwift (4.0-beta1)
   - Spring (1.0.6)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.1)
+  - Alamofire (~> 4.7)
+  - Arrow
   - Hero
+  - Kingfisher
+  - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`, branch `develop`)
   - Spring (from `https://github.com/MengTo/Spring.git`)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Arrow
     - Hero
+    - Kingfisher
 
 EXTERNAL SOURCES:
+  ReachabilitySwift:
+    :branch: develop
+    :git: https://github.com/ashleymills/Reachability.swift
   Spring:
     :git: https://github.com/MengTo/Spring.git
 
 CHECKOUT OPTIONS:
+  ReachabilitySwift:
+    :commit: 6451cd109ef2e88a0763387de44668e17cb1b49e
+    :git: https://github.com/ashleymills/Reachability.swift
   Spring:
     :commit: 50d92a5b9e08848387ae95bf44c6ad20834f7083
     :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
-  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Arrow: d6a6fa7eb3fdb3e3aebc7532bc3412e30dabf953
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
+  Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
+  ReachabilitySwift: fa4416f5356466392a733d21b41873ebe052bf40
   Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
 
-PODFILE CHECKSUM: cbde4b229091859e9059ffc6da78d08453373cf2
+PODFILE CHECKSUM: 02dedd9d3274dbed83fcb3f4363b8f602af1cec2
 
 COCOAPODS: 1.8.4
