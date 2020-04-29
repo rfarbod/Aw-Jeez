@@ -7,13 +7,12 @@
 //
 
 import UIKit
-
+import Hero
 class CharacterVC: UIViewController {
 
     @IBOutlet weak var tblCharacters: UITableView!
     lazy var viewModel = CharacterVM(self)
     var characters = [JCharacter]()
-    var selectedCharacter = JCharacter()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -21,24 +20,31 @@ class CharacterVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         viewModel.getCharacters()
     }
+
+    
+     
     func updateViews() {
         tblCharacters.reloadData()
     }
     func setupViews() {
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        tblCharacters.heroID = "rickExpanded"
         let nib = UINib(nibName: "Character", bundle: nil)
         tblCharacters.register(nib, forCellReuseIdentifier: "characterCell")
+    
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showCharacterEpisodes" {
-            if let vc = segue.destination as? EpisodeVC {
-                vc.character = selectedCharacter
-            }
-        }
-    }
-
-
+   
 }
 extension CharacterVC:UITableViewDataSource,UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 125
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+          let logoView = Bundle.main.loadNibNamed("LogoView", owner: self, options: nil)! [0] as! UIView
+        logoView.backgroundColor = UIColor.clear
+       return logoView
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return characters.count
     }
@@ -51,9 +57,12 @@ extension CharacterVC:UITableViewDataSource,UITableViewDelegate{
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedCharacter = characters[indexPath.row]
-        self.performSegue(withIdentifier: "showCharacterEpisodes", sender: self)
+        tblCharacters.scrollToRow(at: indexPath, at: .middle, animated: true)
+        let epVC = Storyboards.Main.epVC
+        epVC.character = characters[indexPath.row]
+        navigationController?.pushViewController(epVC, animated: true)
     }
+
     
 }
 
