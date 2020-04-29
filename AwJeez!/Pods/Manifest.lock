@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (5.1.0)
+  - Hero (1.5.0)
+  - Spring (1.0.6)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.1)
+  - Hero
+  - Spring (from `https://github.com/MengTo/Spring.git`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Hero
+
+EXTERNAL SOURCES:
+  Spring:
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 50d92a5b9e08848387ae95bf44c6ad20834f7083
+    :git: https://github.com/MengTo/Spring.git
+
+SPEC CHECKSUMS:
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  Hero: b7385b75e7259da62f4f85462f59a5082d66b058
+  Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
+
+PODFILE CHECKSUM: cbde4b229091859e9059ffc6da78d08453373cf2
+
+COCOAPODS: 1.8.4
