@@ -20,7 +20,9 @@ class FavoritesVC: UIViewController {
     }
     
     func setupViews() {
-        let nib = UINib(nibName: "Character", bundle: nil)
+        tblFav.estimatedRowHeight = 400
+        tblFav.rowHeight = UITableView.automaticDimension
+        let nib = UINib(nibName: "FavCell", bundle: nil)
         tblFav.register(nib, forCellReuseIdentifier: "favCell")
     }
   
@@ -39,7 +41,7 @@ extension FavoritesVC:UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "favCell", for: indexPath) as! CharacterCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "favCell", for: indexPath) as! FavCell
         let jCharacter = favVM.convertToJChar(character: favorites[indexPath.row])
         cell.backgroundColor = .clear
         cell.selectionStyle = .none

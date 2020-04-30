@@ -15,6 +15,9 @@
 		184F6805245B064400DB3034 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 184F6803245B064300DB3034 /* like.png */; };
 		184F6808245B0C4100DB3034 /* unlike.png in Resources */ = {isa = PBXBuildFile; fileRef = 184F6807245B0C4100DB3034 /* unlike.png */; };
 		184F680A245B1ADE00DB3034 /* FavoritesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F6809245B1ADE00DB3034 /* FavoritesVM.swift */; };
+		184F680C245B216D00DB3034 /* FavCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184F680B245B216D00DB3034 /* FavCell.xib */; };
+		184F680E245B227100DB3034 /* FavCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F680D245B227100DB3034 /* FavCell.swift */; };
+		184F6812245B258200DB3034 /* EpisodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184F6811245B258200DB3034 /* EpisodeCell.xib */; };
 		18BF1112245985F100B239DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF1111245985F100B239DF /* AppDelegate.swift */; };
 		18BF1114245985F100B239DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF1113245985F100B239DF /* SceneDelegate.swift */; };
 		18BF1116245985F100B239DF /* ChatacterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF1115245985F100B239DF /* ChatacterVC.swift */; };
@@ -77,6 +80,9 @@
 		184F6803245B064300DB3034 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
 		184F6807245B0C4100DB3034 /* unlike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlike.png; sourceTree = "<group>"; };
 		184F6809245B1ADE00DB3034 /* FavoritesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVM.swift; sourceTree = "<group>"; };
+		184F680B245B216D00DB3034 /* FavCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavCell.xib; sourceTree = "<group>"; };
+		184F680D245B227100DB3034 /* FavCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCell.swift; sourceTree = "<group>"; };
+		184F6811245B258200DB3034 /* EpisodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCell.xib; sourceTree = "<group>"; };
 		18BF110E245985F100B239DF /* AwJeez!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AwJeez!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BF1111245985F100B239DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BF1113245985F100B239DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +154,7 @@
 				184F67F8245ACD3300DB3034 /* TopTabBarVC.swift */,
 				184F67FA245ACD9C00DB3034 /* FavoritesVC.swift */,
 				184F6809245B1ADE00DB3034 /* FavoritesVM.swift */,
+				184F680D245B227100DB3034 /* FavCell.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -158,6 +165,22 @@
 				184F67FF245AFC6A00DB3034 /* RFavCharacter.swift */,
 			);
 			path = DatabaseModel;
+			sourceTree = "<group>";
+		};
+		184F680F245B256000DB3034 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				184F680B245B216D00DB3034 /* FavCell.xib */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		184F6810245B257000DB3034 /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				184F6811245B258200DB3034 /* EpisodeCell.xib */,
+			);
+			path = Episodes;
 			sourceTree = "<group>";
 		};
 		18BF1105245985F100B239DF = {
@@ -258,6 +281,8 @@
 		18BF11422459A3EF00B239DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				184F6810245B257000DB3034 /* Episodes */,
+				184F680F245B256000DB3034 /* Favorites */,
 				18BF11432459A3F700B239DF /* Chatacters */,
 			);
 			path = Views;
@@ -427,6 +452,7 @@
 				18BF11592459A70100B239DF /* Montserrat-Light.ttf in Resources */,
 				18BF111E245985F300B239DF /* LaunchScreen.storyboard in Resources */,
 				18BF11662459A70100B239DF /* Montserrat-LightItalic.ttf in Resources */,
+				184F6812245B258200DB3034 /* EpisodeCell.xib in Resources */,
 				18BF11602459A70100B239DF /* Montserrat-Bold.ttf in Resources */,
 				18BF11652459A70100B239DF /* Montserrat-Medium.ttf in Resources */,
 				18BF115E2459A70100B239DF /* Montserrat-Black.ttf in Resources */,
@@ -438,6 +464,7 @@
 				18BF11822459E17600B239DF /* LogoView.xib in Resources */,
 				18BF11642459A70100B239DF /* Montserrat-ThinItalic.ttf in Resources */,
 				18BF111B245985F300B239DF /* Assets.xcassets in Resources */,
+				184F680C245B216D00DB3034 /* FavCell.xib in Resources */,
 				18BF116A2459A70100B239DF /* Montserrat-BlackItalic.ttf in Resources */,
 				18BF1119245985F100B239DF /* Main.storyboard in Resources */,
 				184F6805245B064400DB3034 /* like.png in Resources */,
@@ -505,6 +532,7 @@
 				18BF11732459B08900B239DF /* CharacterVM.swift in Sources */,
 				18BF116E2459AE7100B239DF /* CharacterCell.swift in Sources */,
 				18BF117A2459D0AD00B239DF /* EpisodeVC.swift in Sources */,
+				184F680E245B227100DB3034 /* FavCell.swift in Sources */,
 				18BF1114245985F100B239DF /* SceneDelegate.swift in Sources */,
 				18BF112E24598C3700B239DF /* JOrigin.swift in Sources */,
 				184F6800245AFC6A00DB3034 /* RFavCharacter.swift in Sources */,

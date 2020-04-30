@@ -55,6 +55,7 @@ class CharacterCell: UITableViewCell {
             imgFav.image = UIImage(named: "unlike")
         }
         
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

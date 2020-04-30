@@ -20,6 +20,8 @@ class EpisodeVC: UIViewController {
     func setupViews() {
         let nib = UINib(nibName: "Character", bundle: nil)
         tbEpisodes.register(nib, forCellReuseIdentifier: "characterCell")
+        let epNib = UINib(nibName: "EpisodeCell", bundle: nil)
+        tbEpisodes.register(epNib, forCellReuseIdentifier: "epCell")
         tbEpisodes.reloadData()
     }
     @IBAction func pressedBack(_ sender: UIButton) {
