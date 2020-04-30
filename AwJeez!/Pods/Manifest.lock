@@ -6,7 +6,13 @@ PODS:
     - Kingfisher/Core (= 5.12.0)
   - Kingfisher/Core (5.12.0)
   - ReachabilitySwift (4.0-beta1)
+  - Realm (4.4.1):
+    - Realm/Headers (= 4.4.1)
+  - Realm/Headers (4.4.1)
+  - RealmSwift (4.4.1):
+    - Realm (= 4.4.1)
   - Spring (1.0.6)
+  - SwipeMenuViewController (4.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
@@ -14,7 +20,9 @@ DEPENDENCIES:
   - Hero
   - Kingfisher
   - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`, branch `develop`)
+  - RealmSwift
   - Spring (from `https://github.com/MengTo/Spring.git`)
+  - SwipeMenuViewController
 
 SPEC REPOS:
   trunk:
@@ -22,6 +30,9 @@ SPEC REPOS:
     - Arrow
     - Hero
     - Kingfisher
+    - Realm
+    - RealmSwift
+    - SwipeMenuViewController
 
 EXTERNAL SOURCES:
   ReachabilitySwift:
@@ -44,8 +55,11 @@ SPEC CHECKSUMS:
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   ReachabilitySwift: fa4416f5356466392a733d21b41873ebe052bf40
+  Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
+  RealmSwift: 3eb8924ff7100df5928c7602f71d0fec51e7c9c5
   Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
+  SwipeMenuViewController: 94fac81cc192d9f08f218fe4c0c853569b735e1f
 
-PODFILE CHECKSUM: 02dedd9d3274dbed83fcb3f4363b8f602af1cec2
+PODFILE CHECKSUM: f4f1ed0d3271c014389de413a1b85af6d10ea747
 
 COCOAPODS: 1.8.4

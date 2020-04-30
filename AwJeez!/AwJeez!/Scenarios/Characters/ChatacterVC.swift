@@ -15,21 +15,15 @@ class CharacterVC: UIViewController {
     var characters = [JCharacter]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
-    }
-    override func viewWillAppear(_ animated: Bool) {
         viewModel.getCharacters()
+               setupViews()
     }
-
-    
-     
     func updateViews() {
         tblCharacters.reloadData()
     }
     func setupViews() {
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
         navigationController?.setNavigationBarHidden(true, animated: true)
-        tblCharacters.heroID = "rickExpanded"
         let nib = UINib(nibName: "Character", bundle: nil)
         tblCharacters.register(nib, forCellReuseIdentifier: "characterCell")
     
@@ -60,7 +54,8 @@ extension CharacterVC:UITableViewDataSource,UITableViewDelegate{
         tblCharacters.scrollToRow(at: indexPath, at: .middle, animated: true)
         let epVC = Storyboards.Main.epVC
         epVC.character = characters[indexPath.row]
-        navigationController?.pushViewController(epVC, animated: true)
+        self.modalPresentationStyle = .none
+        self.present(epVC, animated: true, completion: nil)
     }
 
     

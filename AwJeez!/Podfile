@@ -12,4 +12,6 @@ target 'AwJeez!' do
   pod 'Arrow'
   pod 'ReachabilitySwift', :git => 'https://github.com/ashleymills/Reachability.swift', :branch => 'develop'
   pod 'Kingfisher'
+  pod 'RealmSwift'
+  pod 'SwipeMenuViewController'
 end

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184F67F9245ACD3300DB3034 /* TopTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F67F8245ACD3300DB3034 /* TopTabBarVC.swift */; };
+		184F67FB245ACD9C00DB3034 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F67FA245ACD9C00DB3034 /* FavoritesVC.swift */; };
+		184F67FD245AF06200DB3034 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 184F67FC245AF06200DB3034 /* close.png */; };
 		18BF1112245985F100B239DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF1111245985F100B239DF /* AppDelegate.swift */; };
 		18BF1114245985F100B239DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF1113245985F100B239DF /* SceneDelegate.swift */; };
 		18BF1116245985F100B239DF /* ChatacterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF1115245985F100B239DF /* ChatacterVC.swift */; };
@@ -61,6 +64,9 @@
 /* Begin PBXFileReference section */
 		0788030C90E88AF85E88F32D /* Pods_AwJeez_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwJeez_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9CA68EFF5A232D74CF0009 /* Pods-AwJeez!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwJeez!.debug.xcconfig"; path = "Target Support Files/Pods-AwJeez!/Pods-AwJeez!.debug.xcconfig"; sourceTree = "<group>"; };
+		184F67F8245ACD3300DB3034 /* TopTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarVC.swift; sourceTree = "<group>"; };
+		184F67FA245ACD9C00DB3034 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
+		184F67FC245AF06200DB3034 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		18BF110E245985F100B239DF /* AwJeez!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AwJeez!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BF1111245985F100B239DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BF1113245985F100B239DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +132,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		184F67F7245ACD1100DB3034 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				184F67F8245ACD3300DB3034 /* TopTabBarVC.swift */,
+				184F67FA245ACD9C00DB3034 /* FavoritesVC.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		18BF1105245985F100B239DF = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +214,7 @@
 		18BF113A245998C700B239DF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				184F67FC245AF06200DB3034 /* close.png */,
 				18BF11872459E8CC00B239DF /* arrowLeft.png */,
 				18BF117E2459D87B00B239DF /* arrowDown.png */,
 				18BF117D2459D87B00B239DF /* arrowUp.png */,
@@ -262,6 +278,7 @@
 		18BF116B2459AE4A00B239DF /* Scenarios */ = {
 			isa = PBXGroup;
 			children = (
+				184F67F7245ACD1100DB3034 /* Favorites */,
 				18BF11782459D09800B239DF /* Episodes */,
 				18BF116C2459AE5A00B239DF /* Characters */,
 			);
@@ -379,6 +396,7 @@
 				18BF11692459A70100B239DF /* Montserrat-BoldItalic.ttf in Resources */,
 				18BF115B2459A70100B239DF /* Montserrat-Regular.ttf in Resources */,
 				18BF115F2459A70100B239DF /* Montserrat-SemiBold.ttf in Resources */,
+				184F67FD245AF06200DB3034 /* close.png in Resources */,
 				18BF115D2459A70100B239DF /* Montserrat-ExtraLightItalic.ttf in Resources */,
 				18BF11612459A70100B239DF /* Montserrat-ExtraLight.ttf in Resources */,
 				18BF11672459A70100B239DF /* Montserrat-Italic.ttf in Resources */,
@@ -453,6 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184F67FB245ACD9C00DB3034 /* FavoritesVC.swift in Sources */,
 				18BF1116245985F100B239DF /* ChatacterVC.swift in Sources */,
 				18BF112C245989F100B239DF /* JCharacter.swift in Sources */,
 				18BF11712459AF9A00B239DF /* ImageDownloader.swift in Sources */,
@@ -472,6 +491,7 @@
 				18BF11862459E42500B239DF /* Storyboards.swift in Sources */,
 				18BF11842459E23900B239DF /* LoadViewFromNib.swift in Sources */,
 				18BF113324598EB200B239DF /* CharacterWebService.swift in Sources */,
+				184F67F9245ACD3300DB3034 /* TopTabBarVC.swift in Sources */,
 				18BF117C2459D46300B239DF /* EpisodeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,6 @@
 import UIKit
 import Hero
 class EpisodeVC: UIViewController {
-    @IBOutlet weak var imgBack: UIImageView!
     @IBOutlet weak var tbEpisodes: UITableView!
     var episodes = [JEpisode]()
     var character = JCharacter()
@@ -19,15 +18,12 @@ class EpisodeVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     func setupViews() {
-        self.hero.isEnabled = true
-        tbEpisodes.heroID = "rickExpanded"
-        self.view.hero.modifiers = [.translate(y:100)]
         let nib = UINib(nibName: "Character", bundle: nil)
         tbEpisodes.register(nib, forCellReuseIdentifier: "characterCell")
         tbEpisodes.reloadData()
     }
     @IBAction func pressedBack(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
 

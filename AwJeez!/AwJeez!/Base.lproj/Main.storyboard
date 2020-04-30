@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="x6Y-8K-1uj"/>
+                        <segue destination="nO5-Bh-Jir" kind="relationship" relationship="rootViewController" id="LUH-Ew-b3X"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sxj-hf-XPg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="I8k-7u-vgc">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="dHX-79-NPg"/>
@@ -64,16 +64,47 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
+        <!--Top Tab BarVC-->
+        <scene sceneID="nee-Uf-2lR">
+            <objects>
+                <viewController id="nO5-Bh-Jir" customClass="TopTabBarVC" customModule="AwJeez_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aaK-nZ-ktt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.86915074479999999" green="0.40268502969999997" blue="0.078518959360000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="RlL-af-aSF"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2ti-MW-ICh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xrv-T8-gKg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-794" y="877"/>
+        </scene>
+        <!--FavoritesVC-->
+        <scene sceneID="Dfc-aM-gBJ">
+            <objects>
+                <viewController storyboardIdentifier="favVC" id="nRG-Da-tXB" customClass="FavoritesVC" customModule="AwJeez_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MS3-l0-4Uv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Nft-or-d70"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hKr-PG-tRN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="877"/>
+        </scene>
         <!--EpisodeVC-->
         <scene sceneID="Flm-kz-qHe">
             <objects>
                 <viewController storyboardIdentifier="epVC" id="z8H-4H-leG" customClass="EpisodeVC" customModule="AwJeez_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M2o-NX-XdE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rob-pK-Yfh">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="epCell" rowHeight="125" id="t12-9M-mgc" customClass="EpisodeCell" customModule="AwJeez_" customModuleProvider="target">
@@ -155,7 +186,7 @@
                                     <constraint firstAttribute="width" constant="50" id="dcj-gl-aWs"/>
                                     <constraint firstAttribute="height" constant="50" id="sTa-xY-j40"/>
                                 </constraints>
-                                <state key="normal" image="arrowLeft.png"/>
+                                <state key="normal" image="close.png"/>
                                 <connections>
                                     <action selector="pressedBack:" destination="z8H-4H-leG" eventType="touchUpInside" id="HV9-YU-QaL"/>
                                 </connections>
@@ -184,6 +215,6 @@
     </scenes>
     <resources>
         <image name="arrowDown.png" width="512" height="512"/>
-        <image name="arrowLeft.png" width="512" height="512"/>
+        <image name="close.png" width="497" height="500"/>
     </resources>
 </document>

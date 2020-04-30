@@ -17,5 +17,9 @@ class Main {
     static var epVC:EpisodeVC {
         return main.instantiateViewController(identifier: "epVC") as! EpisodeVC
     }
+    static var favVC:FavoritesVC {
+        return main.instantiateViewController(identifier: "favVC") as! FavoritesVC
+    }
+    
 }
 }
