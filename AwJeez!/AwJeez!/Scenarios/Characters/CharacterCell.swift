@@ -15,23 +15,44 @@ class CharacterCell: UITableViewCell {
     @IBOutlet weak var imgFav: UIImageView!
     @IBOutlet weak var lblSpecies: UILabel!
     var character = JCharacter()
+    var isFavorite = false
     override func awakeFromNib() {
         super.awakeFromNib()
+        EventsHelper.observeFavorites(self, with: #selector(favoritesUpdates(notification:)))
         let favGesture = UITapGestureRecognizer(target: self, action: #selector(pressedFav))
         imgFav.isUserInteractionEnabled = true
         imgFav.addGestureRecognizer(favGesture)
         // Initialization code
     }
     @objc func pressedFav() {
-        let isFavorite = DatabaseHandler.init().isFavorite(character: character)
-        switch isFavorite {
+       switch isFavorite {
         case true:
             DatabaseHandler.init().removeFavorite(character: character)
-            imgFav.image = UIImage(named: "unlike")
+            self.isFavorite = false
+            EventsHelper.favoriteUpdated(character.id, favoriteState: false)
         case false:
             DatabaseHandler.init().addFavorite(character: character)
-            imgFav.image = UIImage(named: "like")
+            self.isFavorite = true
+           EventsHelper.favoriteUpdated(character.id, favoriteState: true)
         }
+      
+    }
+    @objc func favoritesUpdates(notification:Notification) {
+        if let userInfo = notification.userInfo {
+            if let id = userInfo["id"] as? Int {
+                if id == character.id {
+                    if let state = userInfo["state"] as? Bool {
+                        switch state {
+                        case true:
+                            self.imgFav.image = UIImage(named: "like")
+                        case false:
+                            self.imgFav.image = UIImage(named: "unlike")
+                        }
+                    }
+                }
+            }
+        }
+        
     }
     func configure(with character: JCharacter) {
         self.character = character
@@ -48,11 +69,12 @@ class CharacterCell: UITableViewCell {
             lblStatus.textColor = .systemGray
         }
         let isFavorite = DatabaseHandler.init().isFavorite(character: character)
+        self.isFavorite = isFavorite
         switch isFavorite {
         case true:
-            imgFav.image = UIImage(named: "like")
+            self.imgFav.image = UIImage(named: "like")
         case false:
-            imgFav.image = UIImage(named: "unlike")
+            self.imgFav.image = UIImage(named: "unlike")
         }
         
         

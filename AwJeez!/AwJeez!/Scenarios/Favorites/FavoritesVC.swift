@@ -15,10 +15,16 @@ class FavoritesVC: UIViewController {
         super.viewDidLoad()
         setupViews()
         favVM.fetchFavorites()
-
+        EventsHelper.observeFavorites(self, with: #selector(favoritesUpdates(notification:)))
         // Do any additional setup after loading the view.
     }
-    
+    @objc func favoritesUpdates(notification:Notification) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.favorites.removeAll()
+            self.favVM.fetchFavorites()
+            self.tblFav.reloadData()
+        }
+    }
     func setupViews() {
         tblFav.estimatedRowHeight = 400
         tblFav.rowHeight = UITableView.automaticDimension

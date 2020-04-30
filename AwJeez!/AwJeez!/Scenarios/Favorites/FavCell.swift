@@ -22,6 +22,7 @@ class FavCell: UITableViewCell {
     @IBOutlet weak var cnsTblHeight: NSLayoutConstraint!
     @IBOutlet weak var cnsWholeHeight: NSLayoutConstraint!
     var character = JCharacter()
+    var isFavorite = false
     override func awakeFromNib() {
         super.awakeFromNib()
         let favGesture = UITapGestureRecognizer(target: self, action: #selector(pressedFav))
@@ -33,8 +34,9 @@ class FavCell: UITableViewCell {
     func setupViews() {
         tblEpisodes.isScrollEnabled = false
         cnsTblHeight.constant = CGFloat(character.episode.count * 125)
-        if cnsTblHeight.constant >= 31 * 125 {
-            cnsTblHeight.constant = 31 * 125 - 3 * 125 - 30
+        if character.episode.count > 10 {
+            cnsTblHeight.constant = 500
+            tblEpisodes.isScrollEnabled = true 
         }
         cnsWholeHeight.constant = CGFloat(290) + cnsTblHeight.constant
         let epNib = UINib(nibName: "EpisodeCell", bundle: nil)
@@ -42,14 +44,15 @@ class FavCell: UITableViewCell {
         tblEpisodes.reloadData()
     }
     @objc func pressedFav() {
-        let isFavorite = DatabaseHandler.init().isFavorite(character: character)
         switch isFavorite {
         case true:
             DatabaseHandler.init().removeFavorite(character: character)
-            imgFav.image = UIImage(named: "unlike")
+            isFavorite = false
+            EventsHelper.favoriteUpdated(character.id, favoriteState: false)
         case false:
+            isFavorite = true
             DatabaseHandler.init().addFavorite(character: character)
-            imgFav.image = UIImage(named: "like")
+            EventsHelper.favoriteUpdated(character.id, favoriteState: true)
         }
     }
     func configure(with character: JCharacter) {
@@ -68,6 +71,7 @@ class FavCell: UITableViewCell {
             lblStatus.textColor = .systemGray
         }
         let isFavorite = DatabaseHandler.init().isFavorite(character: character)
+        self.isFavorite = isFavorite
         switch isFavorite {
         case true:
             imgFav.image = UIImage(named: "like")
