@@ -8,7 +8,8 @@
 
 import Foundation
 import RealmSwift
-func DatabaseHelper() {
+import Realm
+class DatabaseHandler {
     func addFavorite(character:JCharacter) {
         let rFavChar = RFavCharacter()
         rFavChar.id = character.id
@@ -27,7 +28,11 @@ func DatabaseHelper() {
         rFavChar.origin = character.origin
         rFavChar.location = character.location
         rFavChar.image = character.image
-        rFavChar.episode = character.episode
+        let episodes = List<String>()
+        for each in character.episode {
+            episodes.append(each)
+        }
+        rFavChar.episode = episodes
         rFavChar.url = character.url
         rFavChar.created = character.created
         let realm = try! Realm()
@@ -36,10 +41,32 @@ func DatabaseHelper() {
         }
     
     }
+    func removeFavorite(character:JCharacter) {
+        let realm = try! Realm()
+        let result = realm.objects(RFavCharacter.self)
+        if let character = result.first(where: { (char) -> Bool in
+            return char.id == character.id
+        }){
+            try! realm.write {
+                realm.delete(character)
+            }
+        }
+    }
     func fetchFavorites() -> Results<RFavCharacter>{
         let realm = try! Realm()
         let result = realm.objects(RFavCharacter.self)
         return result
+    }
+    func isFavorite(character:JCharacter) -> Bool {
+        let realm = try! Realm()
+        let result = realm.objects(RFavCharacter.self)
+        if let _ = result.first(where: { (char) -> Bool in
+            return char.id == character.id
+        }){
+            return true
+        }else{
+            return false
+        }
     }
     
 }

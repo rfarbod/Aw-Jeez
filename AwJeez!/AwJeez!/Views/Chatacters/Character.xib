@@ -45,14 +45,23 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unlike.png" translatesAutoresizingMaskIntoConstraints="NO" id="uon-Bb-xcC">
+                            <rect key="frame" x="8" y="8" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="KmG-uo-ic6"/>
+                                <constraint firstAttribute="width" constant="40" id="oFA-ZG-BsQ"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstItem="51d-Ak-TDN" firstAttribute="centerX" secondItem="tnv-PT-UVc" secondAttribute="centerX" id="CBC-Ys-CfD"/>
                         <constraint firstItem="av7-b1-QeI" firstAttribute="leading" secondItem="tnv-PT-UVc" secondAttribute="leading" constant="10" id="HLl-wF-4Ou"/>
                         <constraint firstItem="wPP-HD-Dp6" firstAttribute="centerX" secondItem="tnv-PT-UVc" secondAttribute="centerX" id="J0P-Mc-Okg"/>
+                        <constraint firstItem="uon-Bb-xcC" firstAttribute="leading" secondItem="tnv-PT-UVc" secondAttribute="leading" constant="8" id="LUY-u6-dP6"/>
                         <constraint firstAttribute="height" constant="209" id="Lnw-zr-ujf"/>
                         <constraint firstItem="wPP-HD-Dp6" firstAttribute="top" secondItem="51d-Ak-TDN" secondAttribute="bottom" constant="8" id="Pws-Fl-0LN"/>
+                        <constraint firstItem="uon-Bb-xcC" firstAttribute="top" secondItem="tnv-PT-UVc" secondAttribute="top" constant="8" id="UOB-hK-27j"/>
                         <constraint firstItem="51d-Ak-TDN" firstAttribute="top" secondItem="av7-b1-QeI" secondAttribute="bottom" constant="8" id="WcF-kD-0Ys"/>
                         <constraint firstItem="av7-b1-QeI" firstAttribute="centerX" secondItem="tnv-PT-UVc" secondAttribute="centerX" id="auu-zh-Ho0"/>
                         <constraint firstAttribute="trailing" secondItem="av7-b1-QeI" secondAttribute="trailing" constant="10" id="iQN-QI-gBX"/>
@@ -102,6 +111,7 @@
             <viewLayoutGuide key="safeArea" id="V7b-4d-OqF"/>
             <connections>
                 <outlet property="imgChar" destination="QqJ-u2-i4L" id="OSu-Ig-KwN"/>
+                <outlet property="imgFav" destination="uon-Bb-xcC" id="y3t-6U-wns"/>
                 <outlet property="lblName" destination="av7-b1-QeI" id="jhe-Xq-qvx"/>
                 <outlet property="lblSpecies" destination="wPP-HD-Dp6" id="yqE-gz-Kov"/>
                 <outlet property="lblStatus" destination="51d-Ak-TDN" id="1BG-Bu-QuK"/>
@@ -111,5 +121,6 @@
     </objects>
     <resources>
         <image name="bg.jpg" width="1536" height="2732"/>
+        <image name="unlike.png" width="199.26486206054688" height="199.26486206054688"/>
     </resources>
 </document>

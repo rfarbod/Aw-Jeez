@@ -12,6 +12,9 @@
 		184F67FD245AF06200DB3034 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 184F67FC245AF06200DB3034 /* close.png */; };
 		184F6800245AFC6A00DB3034 /* RFavCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F67FF245AFC6A00DB3034 /* RFavCharacter.swift */; };
 		184F6802245B01BB00DB3034 /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F6801245B01BB00DB3034 /* DatabaseHandler.swift */; };
+		184F6805245B064400DB3034 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 184F6803245B064300DB3034 /* like.png */; };
+		184F6808245B0C4100DB3034 /* unlike.png in Resources */ = {isa = PBXBuildFile; fileRef = 184F6807245B0C4100DB3034 /* unlike.png */; };
+		184F680A245B1ADE00DB3034 /* FavoritesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F6809245B1ADE00DB3034 /* FavoritesVM.swift */; };
 		18BF1112245985F100B239DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF1111245985F100B239DF /* AppDelegate.swift */; };
 		18BF1114245985F100B239DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF1113245985F100B239DF /* SceneDelegate.swift */; };
 		18BF1116245985F100B239DF /* ChatacterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF1115245985F100B239DF /* ChatacterVC.swift */; };
@@ -71,6 +74,9 @@
 		184F67FC245AF06200DB3034 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		184F67FF245AFC6A00DB3034 /* RFavCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFavCharacter.swift; sourceTree = "<group>"; };
 		184F6801245B01BB00DB3034 /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
+		184F6803245B064300DB3034 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
+		184F6807245B0C4100DB3034 /* unlike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlike.png; sourceTree = "<group>"; };
+		184F6809245B1ADE00DB3034 /* FavoritesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVM.swift; sourceTree = "<group>"; };
 		18BF110E245985F100B239DF /* AwJeez!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AwJeez!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BF1111245985F100B239DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BF1113245985F100B239DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +147,7 @@
 			children = (
 				184F67F8245ACD3300DB3034 /* TopTabBarVC.swift */,
 				184F67FA245ACD9C00DB3034 /* FavoritesVC.swift */,
+				184F6809245B1ADE00DB3034 /* FavoritesVM.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -227,6 +234,8 @@
 		18BF113A245998C700B239DF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				184F6807245B0C4100DB3034 /* unlike.png */,
+				184F6803245B064300DB3034 /* like.png */,
 				184F67FC245AF06200DB3034 /* close.png */,
 				18BF11872459E8CC00B239DF /* arrowLeft.png */,
 				18BF117E2459D87B00B239DF /* arrowDown.png */,
@@ -407,6 +416,7 @@
 				18BF11682459A70100B239DF /* Montserrat-MediumItalic.ttf in Resources */,
 				18BF115C2459A70100B239DF /* Montserrat-Thin.ttf in Resources */,
 				18BF11622459A70100B239DF /* Montserrat-ExtraBoldItalic.ttf in Resources */,
+				184F6808245B0C4100DB3034 /* unlike.png in Resources */,
 				18BF11692459A70100B239DF /* Montserrat-BoldItalic.ttf in Resources */,
 				18BF115B2459A70100B239DF /* Montserrat-Regular.ttf in Resources */,
 				18BF115F2459A70100B239DF /* Montserrat-SemiBold.ttf in Resources */,
@@ -430,6 +440,7 @@
 				18BF111B245985F300B239DF /* Assets.xcassets in Resources */,
 				18BF116A2459A70100B239DF /* Montserrat-BlackItalic.ttf in Resources */,
 				18BF1119245985F100B239DF /* Main.storyboard in Resources */,
+				184F6805245B064400DB3034 /* like.png in Resources */,
 				18BF11632459A70100B239DF /* Montserrat-SemiBoldItalic.ttf in Resources */,
 				18BF11882459E8CC00B239DF /* arrowLeft.png in Resources */,
 				18BF11802459D87B00B239DF /* arrowDown.png in Resources */,
@@ -499,6 +510,7 @@
 				184F6800245AFC6A00DB3034 /* RFavCharacter.swift in Sources */,
 				18BF11392459974900B239DF /* JLocation.swift in Sources */,
 				18BF113724598FC100B239DF /* JResponse.swift in Sources */,
+				184F680A245B1ADE00DB3034 /* FavoritesVM.swift in Sources */,
 				18BF11772459CCD900B239DF /* EpisodeWebService.swift in Sources */,
 				18BF11412459A06500B239DF /* JResCharacter.swift in Sources */,
 				18BF11752459CBCD00B239DF /* JEpisode.swift in Sources */,

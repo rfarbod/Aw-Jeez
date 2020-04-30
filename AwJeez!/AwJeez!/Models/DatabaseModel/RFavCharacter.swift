@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import Realm
 class RFavCharacter:Object {
     @objc dynamic var id = Int()
     @objc dynamic var name = String()
@@ -18,7 +19,7 @@ class RFavCharacter:Object {
     @objc dynamic var origin = String()
     @objc dynamic var location = String()
     @objc dynamic var image = String()
-    @objc dynamic var episode = [String]()
+    dynamic var episode = List<String>()
     @objc dynamic var url = String()
     @objc dynamic var created = String()
     }
