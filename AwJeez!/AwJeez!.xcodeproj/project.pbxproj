@@ -10,6 +10,8 @@
 		184F67F9245ACD3300DB3034 /* TopTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F67F8245ACD3300DB3034 /* TopTabBarVC.swift */; };
 		184F67FB245ACD9C00DB3034 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F67FA245ACD9C00DB3034 /* FavoritesVC.swift */; };
 		184F67FD245AF06200DB3034 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 184F67FC245AF06200DB3034 /* close.png */; };
+		184F6800245AFC6A00DB3034 /* RFavCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F67FF245AFC6A00DB3034 /* RFavCharacter.swift */; };
+		184F6802245B01BB00DB3034 /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F6801245B01BB00DB3034 /* DatabaseHandler.swift */; };
 		18BF1112245985F100B239DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF1111245985F100B239DF /* AppDelegate.swift */; };
 		18BF1114245985F100B239DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF1113245985F100B239DF /* SceneDelegate.swift */; };
 		18BF1116245985F100B239DF /* ChatacterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF1115245985F100B239DF /* ChatacterVC.swift */; };
@@ -67,6 +69,8 @@
 		184F67F8245ACD3300DB3034 /* TopTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarVC.swift; sourceTree = "<group>"; };
 		184F67FA245ACD9C00DB3034 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		184F67FC245AF06200DB3034 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		184F67FF245AFC6A00DB3034 /* RFavCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFavCharacter.swift; sourceTree = "<group>"; };
+		184F6801245B01BB00DB3034 /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
 		18BF110E245985F100B239DF /* AwJeez!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AwJeez!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BF1111245985F100B239DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BF1113245985F100B239DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +145,14 @@
 			path = Favorites;
 			sourceTree = "<group>";
 		};
+		184F67FE245AFC5300DB3034 /* DatabaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				184F67FF245AFC6A00DB3034 /* RFavCharacter.swift */,
+			);
+			path = DatabaseModel;
+			sourceTree = "<group>";
+		};
 		18BF1105245985F100B239DF = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +202,7 @@
 		18BF112A245989E400B239DF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				184F67FE245AFC5300DB3034 /* DatabaseModel */,
 				18BF112B245989F100B239DF /* JCharacter.swift */,
 				18BF112D24598C3700B239DF /* JOrigin.swift */,
 				18BF116F2459AF8300B239DF /* Helpers */,
@@ -300,6 +313,7 @@
 			children = (
 				18BF11702459AF9A00B239DF /* ImageDownloader.swift */,
 				18BF11832459E23900B239DF /* LoadViewFromNib.swift */,
+				184F6801245B01BB00DB3034 /* DatabaseHandler.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -474,6 +488,7 @@
 				184F67FB245ACD9C00DB3034 /* FavoritesVC.swift in Sources */,
 				18BF1116245985F100B239DF /* ChatacterVC.swift in Sources */,
 				18BF112C245989F100B239DF /* JCharacter.swift in Sources */,
+				184F6802245B01BB00DB3034 /* DatabaseHandler.swift in Sources */,
 				18BF11712459AF9A00B239DF /* ImageDownloader.swift in Sources */,
 				18BF1112245985F100B239DF /* AppDelegate.swift in Sources */,
 				18BF11732459B08900B239DF /* CharacterVM.swift in Sources */,
@@ -481,6 +496,7 @@
 				18BF117A2459D0AD00B239DF /* EpisodeVC.swift in Sources */,
 				18BF1114245985F100B239DF /* SceneDelegate.swift in Sources */,
 				18BF112E24598C3700B239DF /* JOrigin.swift in Sources */,
+				184F6800245AFC6A00DB3034 /* RFavCharacter.swift in Sources */,
 				18BF11392459974900B239DF /* JLocation.swift in Sources */,
 				18BF113724598FC100B239DF /* JResponse.swift in Sources */,
 				18BF11772459CCD900B239DF /* EpisodeWebService.swift in Sources */,
