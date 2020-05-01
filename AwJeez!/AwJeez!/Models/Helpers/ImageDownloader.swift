@@ -12,6 +12,7 @@ import UIKit
 extension UIImageView {
     func downloadImage(url:String) {
         if let url = URL(string:url) {
+            kf.indicatorType = .activity
             kf.setImage(with: url ,placeholder: UIImage(named: "bg"))
         }
     }

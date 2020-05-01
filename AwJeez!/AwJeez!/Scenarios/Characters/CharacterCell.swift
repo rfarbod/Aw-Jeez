@@ -27,11 +27,11 @@ class CharacterCell: UITableViewCell {
     @objc func pressedFav() {
        switch isFavorite {
         case true:
-            DatabaseHandler.init().removeFavorite(character: character)
+            DatabaseHandler.shared.removeFavorite(character: character)
             self.isFavorite = false
             EventsHelper.favoriteUpdated(character.id, favoriteState: false)
         case false:
-            DatabaseHandler.init().addFavorite(character: character)
+            DatabaseHandler.shared.addFavorite(character: character)
             self.isFavorite = true
            EventsHelper.favoriteUpdated(character.id, favoriteState: true)
         }
@@ -68,7 +68,7 @@ class CharacterCell: UITableViewCell {
         case .Unknown:
             lblStatus.textColor = .systemGray
         }
-        let isFavorite = DatabaseHandler.init().isFavorite(character: character)
+        let isFavorite = DatabaseHandler.shared.isFavorite(character: character)
         self.isFavorite = isFavorite
         switch isFavorite {
         case true:

@@ -9,4 +9,7 @@
 import Foundation
 class MyURLs {
     static let characters = "https://rickandmortyapi.com/api/character/"
+    static func charactersPage (page:Int) -> String{
+        return "\(characters)/?page=\(page)"
+    }
 }

@@ -13,6 +13,7 @@ class CharacterVC: UIViewController {
     @IBOutlet weak var tblCharacters: UITableView!
     lazy var viewModel = CharacterVM(self)
     var characters = [JCharacter]()
+    var currentPage = 1
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.getCharacters()
@@ -56,6 +57,24 @@ extension CharacterVC:UITableViewDataSource,UITableViewDelegate{
         epVC.character = characters[indexPath.row]
         self.modalPresentationStyle = .none
         self.present(epVC, animated: true, completion: nil)
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.isAtBottom == true && viewModel.isLoadingNew == false {
+             currentPage = currentPage + 1
+            viewModel.getCharacters()
+        }
+    }
+     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastSectionIndex = tableView.numberOfSections - 1
+        let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1
+        if indexPath.section ==  lastSectionIndex && indexPath.row == lastRowIndex {
+            let spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+            spinner.startAnimating()
+            spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(44))
+            spinner.color = .white
+            self.tblCharacters.tableFooterView = spinner
+            self.tblCharacters.tableFooterView?.isHidden = false
+        }
     }
 
     

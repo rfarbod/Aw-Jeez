@@ -11,6 +11,7 @@ import RealmSwift
 import Realm
 class DatabaseHandler {
     let realm = try! Realm()
+    static let shared = DatabaseHandler()
     func addFavorite(character:JCharacter) {
         let rFavChar = RFavCharacter()
         rFavChar.id = character.id

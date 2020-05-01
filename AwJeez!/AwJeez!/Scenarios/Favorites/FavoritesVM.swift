@@ -38,7 +38,7 @@ class FavoritesVM {
         return jCharacter
     }
     func fetchFavorites() {
-        let results = DatabaseHandler.init().fetchFavorites()
+        let results = DatabaseHandler.shared.fetchFavorites()
         for each in results {
             self.vc.favorites.append(each)
         }

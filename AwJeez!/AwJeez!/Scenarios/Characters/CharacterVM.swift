@@ -9,18 +9,22 @@
 import Foundation
 class CharacterVM {
     weak var vc:CharacterVC!
+    var isLoadingNew = false
     init(_ vc:CharacterVC) {
         self.vc = vc
     }
     func getCharacters() {
-        WebServices.init().getCharacters(success: { [weak self](characters) in
+        isLoadingNew = true
+        WebServices.init().getCharacters(page: vc.currentPage ,success: { [weak self](characters) in
             guard let selfie = self else{return}
+            selfie.isLoadingNew = false
             if let characters = characters.results as? JResCharacter {
-                selfie.vc.characters = characters.results
+                selfie.vc.characters.append(contentsOf: characters.results)
             }
             selfie.vc.updateViews()
-        },failure:  { (response) in
-            
+        },failure:  {[weak self] (response) in
+            guard let selfie = self else{return}
+            selfie.isLoadingNew = false
         })
     }
 }

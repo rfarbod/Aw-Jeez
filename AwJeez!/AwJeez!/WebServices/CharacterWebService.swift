@@ -8,7 +8,7 @@
 
 import Foundation
 extension WebServices {
-    func getCharacters(success:@escaping Success,failure:@escaping Failure) {
-        WebServices.request(url: MyURLs.characters , resultType: JResCharacter.self, success: success, failure: failure)
+    func getCharacters(page:Int,success:@escaping Success,failure:@escaping Failure) {
+        WebServices.request(url: MyURLs.charactersPage(page: page) , resultType: JResCharacter.self, success: success, failure: failure)
     }
 }
