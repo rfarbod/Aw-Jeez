@@ -117,9 +117,19 @@ extension FavCell:UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "epCell", for: indexPath) as! EpisodeCell
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
-        cell.configure(with: character.episode[indexPath.row])
+        cell.configure(with: character.episode[indexPath.row], delegate: self, state: .normal, needsDetaildInfo: false)
         return cell 
     }
+    
+    
+}
+extension FavCell:EpisodeDelegate {
+    func pressedEpisode(epName: String, state: EpisodeState) {
+        
+    }
+
+    
+
     
     
 }

@@ -12,6 +12,7 @@ class EpisodeVC: UIViewController {
     @IBOutlet weak var tbEpisodes: UITableView!
     var episodes = [JEpisode]()
     var character = JCharacter()
+    var cellStates = [Int:EpisodeState]()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -22,6 +23,9 @@ class EpisodeVC: UIViewController {
         tbEpisodes.register(nib, forCellReuseIdentifier: "characterCell")
         let epNib = UINib(nibName: "EpisodeCell", bundle: nil)
         tbEpisodes.register(epNib, forCellReuseIdentifier: "epCell")
+        for i in 0...character.episode.count - 1 {
+            cellStates.updateValue(.normal, forKey: i)
+        }
         tbEpisodes.reloadData()
     }
     @IBAction func pressedBack(_ sender: UIButton) {
@@ -57,10 +61,26 @@ extension EpisodeVC:UITableViewDelegate,UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "epCell", for: indexPath) as! EpisodeCell
             cell.backgroundColor = .clear
             cell.selectionStyle = .none
-            cell.configure(with: character.episode[indexPath.row])
+            if let cellState = cellStates[indexPath.row] {
+                cell.configure(with: character.episode[indexPath.row], delegate: self, state: cellState, needsDetaildInfo: true)
+            }
             return cell
         default:
             return UITableViewCell()
         }
     }
+
+}
+extension EpisodeVC:EpisodeDelegate {
+    func pressedEpisode(epName: String,state: EpisodeState) {
+         tbEpisodes.beginUpdates()
+         tbEpisodes.endUpdates()
+        if let index = character.episode.firstIndex(of: epName) {
+            cellStates.updateValue(state, forKey: Int(index))
+        }
+         
+
+    }
+    
+    
 }
