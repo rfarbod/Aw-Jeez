@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.9.1)
   - Arrow (5.1.1)
+  - EmptyDataSet-Swift (5.0.0)
   - Hero (1.5.0)
   - Kingfisher (5.12.0):
     - Kingfisher/Core (= 5.12.0)
@@ -17,6 +18,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - Arrow
+  - EmptyDataSet-Swift (~> 5.0.0)
   - Hero
   - Kingfisher
   - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`, branch `develop`)
@@ -28,6 +30,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Arrow
+    - EmptyDataSet-Swift
     - Hero
     - Kingfisher
     - Realm
@@ -52,6 +55,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Arrow: d6a6fa7eb3fdb3e3aebc7532bc3412e30dabf953
+  EmptyDataSet-Swift: eb382c0c87a2d9c678077385a595cec52da38171
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   ReachabilitySwift: fa4416f5356466392a733d21b41873ebe052bf40
@@ -60,6 +64,6 @@ SPEC CHECKSUMS:
   Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
   SwipeMenuViewController: 94fac81cc192d9f08f218fe4c0c853569b735e1f
 
-PODFILE CHECKSUM: f4f1ed0d3271c014389de413a1b85af6d10ea747
+PODFILE CHECKSUM: 3a5cf13e50e09de3be095d4be07d48f249ca88a2
 
 COCOAPODS: 1.8.4

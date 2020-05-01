@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EmptyDataSet_Swift
 class FavoritesVC: UIViewController {
     @IBOutlet weak var tblFav: UITableView!
     var favorites = [RFavCharacter]()
@@ -26,6 +27,7 @@ class FavoritesVC: UIViewController {
         }
     }
     func setupViews() {
+        tblFav.emptyDataSetSource = self
         tblFav.estimatedRowHeight = 400
         tblFav.rowHeight = UITableView.automaticDimension
         let nib = UINib(nibName: "FavCell", bundle: nil)
@@ -56,6 +58,19 @@ extension FavoritesVC:UITableViewDataSource,UITableViewDelegate {
     }
     
     
+}
+extension FavoritesVC:EmptyDataSetSource {
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "Wubba-Lubba-Dub-Dub", attributes: [NSAttributedString.Key.font
+            : UIFont(name: "Montserrat-Black", size: 25)!,NSAttributedString.Key.foregroundColor: UIColor.white])
+    }
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage(named: "rickEmpty")
+    }
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "You have no favorite characters!!", attributes: [NSAttributedString.Key.font
+        : UIFont(name: "Montserrat-Light", size: 20)!,NSAttributedString.Key.foregroundColor: UIColor.white])
+    }
 }
 
     
