@@ -15,10 +15,13 @@ class Main {
         return main.instantiateViewController(withIdentifier: "charVC") as! CharacterVC
     }
     static var epVC:EpisodeVC {
-        return main.instantiateViewController(identifier: "epVC") as! EpisodeVC
+        return main.instantiateViewController(withIdentifier: "epVC") as! EpisodeVC
     }
     static var favVC:FavoritesVC {
-        return main.instantiateViewController(identifier: "favVC") as! FavoritesVC
+        return main.instantiateViewController(withIdentifier: "favVC") as! FavoritesVC
+    }
+    static var navVC:UINavigationController {
+        return main.instantiateViewController(withIdentifier: "navVC") as! UINavigationController
     }
     
 }

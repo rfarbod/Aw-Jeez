@@ -23,8 +23,8 @@
 		184F6818245C30C700DB3034 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 184F6817245C30C700DB3034 /* giphy.gif */; };
 		184F6824245C39F600DB3034 /* rickEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = 184F6823245C39F600DB3034 /* rickEmpty.png */; };
 		184F6826245C726100DB3034 /* EpisodeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F6825245C726100DB3034 /* EpisodeVM.swift */; };
+		184F6828245C8DA900DB3034 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F6827245C8DA900DB3034 /* SceneDelegate.swift */; };
 		18BF1112245985F100B239DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF1111245985F100B239DF /* AppDelegate.swift */; };
-		18BF1114245985F100B239DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF1113245985F100B239DF /* SceneDelegate.swift */; };
 		18BF1116245985F100B239DF /* ChatacterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF1115245985F100B239DF /* ChatacterVC.swift */; };
 		18BF1119245985F100B239DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BF1117245985F100B239DF /* Main.storyboard */; };
 		18BF111B245985F300B239DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BF111A245985F300B239DF /* Assets.xcassets */; };
@@ -93,9 +93,9 @@
 		184F6817245C30C700DB3034 /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy.gif; sourceTree = "<group>"; };
 		184F6823245C39F600DB3034 /* rickEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rickEmpty.png; sourceTree = "<group>"; };
 		184F6825245C726100DB3034 /* EpisodeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeVM.swift; sourceTree = "<group>"; };
+		184F6827245C8DA900DB3034 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		18BF110E245985F100B239DF /* AwJeez!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AwJeez!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BF1111245985F100B239DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18BF1113245985F100B239DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		18BF1115245985F100B239DF /* ChatacterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatacterVC.swift; sourceTree = "<group>"; };
 		18BF1118245985F100B239DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18BF111A245985F300B239DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -219,12 +219,12 @@
 				18BF112A245989E400B239DF /* Models */,
 				18BF11252459881C00B239DF /* Resources */,
 				18BF1111245985F100B239DF /* AppDelegate.swift */,
-				18BF1113245985F100B239DF /* SceneDelegate.swift */,
 				18BF1117245985F100B239DF /* Main.storyboard */,
 				18BF111A245985F300B239DF /* Assets.xcassets */,
 				18BF116B2459AE4A00B239DF /* Scenarios */,
 				18BF111C245985F300B239DF /* LaunchScreen.storyboard */,
 				18BF111F245985F300B239DF /* Info.plist */,
+				184F6827245C8DA900DB3034 /* SceneDelegate.swift */,
 			);
 			path = "AwJeez!";
 			sourceTree = "<group>";
@@ -552,7 +552,7 @@
 				18BF116E2459AE7100B239DF /* CharacterCell.swift in Sources */,
 				18BF117A2459D0AD00B239DF /* EpisodeVC.swift in Sources */,
 				184F680E245B227100DB3034 /* FavCell.swift in Sources */,
-				18BF1114245985F100B239DF /* SceneDelegate.swift in Sources */,
+				184F6828245C8DA900DB3034 /* SceneDelegate.swift in Sources */,
 				18BF112E24598C3700B239DF /* JOrigin.swift in Sources */,
 				184F6800245AFC6A00DB3034 /* RFavCharacter.swift in Sources */,
 				18BF11392459974900B239DF /* JLocation.swift in Sources */,
@@ -716,6 +716,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A5X8ZJ4SML;
 				INFOPLIST_FILE = "AwJeez!/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -735,6 +736,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A5X8ZJ4SML;
 				INFOPLIST_FILE = "AwJeez!/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

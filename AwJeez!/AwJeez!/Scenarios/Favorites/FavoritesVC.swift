@@ -47,6 +47,13 @@ extension FavoritesVC:UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favorites.count
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tblFav.scrollToRow(at: indexPath, at: .middle, animated: true)
+            let epVC = Storyboards.Main.epVC
+            epVC.character =  favVM.convertToJChar(character: favorites[indexPath.row])
+            self.modalPresentationStyle = .none
+            self.present(epVC, animated: true, completion: nil)
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favCell", for: indexPath) as! FavCell

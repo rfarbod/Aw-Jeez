@@ -68,9 +68,9 @@ extension CharacterVC:UITableViewDataSource,UITableViewDelegate{
         let lastSectionIndex = tableView.numberOfSections - 1
         let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1
         if indexPath.section ==  lastSectionIndex && indexPath.row == lastRowIndex {
-            let spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+            let spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
             spinner.startAnimating()
-            spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(44))
+            spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(100))
             spinner.color = .white
             self.tblCharacters.tableFooterView = spinner
             self.tblCharacters.tableFooterView?.isHidden = false
