@@ -17,7 +17,6 @@ protocol EpisodeDelegate {
 }
 class EpisodeCell: UITableViewCell {
     @IBOutlet weak var imgExpand: UIImageView!
-    @IBOutlet weak var cnsHeight: NSLayoutConstraint!
     @IBOutlet weak var vwWhole: DesignableView!
     @IBOutlet weak var lblEpName: UILabel!
     @IBOutlet weak var lblEpTitle: UILabel!
@@ -60,7 +59,6 @@ class EpisodeCell: UITableViewCell {
                case .normal:
                    self.state = .normal
                    imgExpand.image = UIImage(named: "arrowDown")
-                    cnsHeight.constant = 100
                     UIView.animate(withDuration: 0.2) {
                         self.layoutIfNeeded()
                         self.lblEpTitle.alpha = 0
@@ -70,7 +68,6 @@ class EpisodeCell: UITableViewCell {
                case .expanded:
                    self.state = .expanded
                    imgExpand.image = UIImage(named: "arrowUp")
-                   cnsHeight.constant = 200
                    UIView.animate(withDuration: 0.2) {
                        self.layoutIfNeeded()
                        self.lblEpTitle.alpha = 1
@@ -80,22 +77,24 @@ class EpisodeCell: UITableViewCell {
                    epVM.getEpisodeDetails(epUrl: episodeName)
                }
     }
-    func configure(with episodeName:String,delegate:EpisodeDelegate , state: EpisodeState,needsDetaildInfo:Bool) {
+    func configure(with episodeName:String,delegate:EpisodeDelegate, needsDetaildInfo:Bool ,cellHeight:CGFloat) {
         self.delegate = delegate
         self.episodeName = episodeName
         let episodeNumber =  episodeName.components(separatedBy: "https://rickandmortyapi.com/api/episode/")
         if episodeNumber.indices.contains(1) {
             lblEpName.text = "Episode \(episodeNumber[1])"
         }
-        if needsDetaildInfo == true {
-         updateUI()
-         imgExpand.isHidden = false
-            vwWhole.isUserInteractionEnabled = true
-        }else{
-            imgExpand.isHidden = true
-            vwWhole.isUserInteractionEnabled = false
+        imgExpand.isHidden = !needsDetaildInfo
+        switch cellHeight {
+        case 210:
+            state = .expanded
+            updateUI()
+        case 110:
+            state = .normal
+            updateUI()
+        default:
+            break
         }
-    
     }
     func configureEpDetail(with episode:JEpisode) {
         lblEpTitle.text = "Name: \(episode.name)"

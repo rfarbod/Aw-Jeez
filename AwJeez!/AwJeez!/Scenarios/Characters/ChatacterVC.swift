@@ -8,20 +8,25 @@
 
 import UIKit
 import Hero
+import SwipeMenuViewController
+protocol CharacterDelegate {
+    func pressedChar(character:JCharacter)
+}
 class CharacterVC: UIViewController {
-
     @IBOutlet weak var tblCharacters: UITableView!
     lazy var viewModel = CharacterVM(self)
     var characters = [JCharacter]()
     var currentPage = 1
+    var delegate:CharacterDelegate? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.getCharacters()
-               setupViews()
+        setupViews()
     }
     func updateViews() {
         tblCharacters.reloadData()
     }
+    
     func setupViews() {
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
         navigationController?.setNavigationBarHidden(true, animated: true)
@@ -53,10 +58,7 @@ extension CharacterVC:UITableViewDataSource,UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tblCharacters.scrollToRow(at: indexPath, at: .middle, animated: true)
-        let epVC = Storyboards.Main.epVC
-        epVC.character = characters[indexPath.row]
-        self.modalPresentationStyle = .none
-        self.present(epVC, animated: true, completion: nil)
+        delegate?.pressedChar(character: characters[indexPath.row])
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.isAtBottom == true && viewModel.isLoadingNew == false {

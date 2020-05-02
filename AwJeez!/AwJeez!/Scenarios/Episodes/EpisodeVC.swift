@@ -12,7 +12,7 @@ class EpisodeVC: UIViewController {
     @IBOutlet weak var tbEpisodes: UITableView!
     var episodes = [JEpisode]()
     var character = JCharacter()
-    var cellStates = [Int:EpisodeState]()
+    var cellHeights = [IndexPath:CGFloat]()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -23,13 +23,10 @@ class EpisodeVC: UIViewController {
         tbEpisodes.register(nib, forCellReuseIdentifier: "characterCell")
         let epNib = UINib(nibName: "EpisodeCell", bundle: nil)
         tbEpisodes.register(epNib, forCellReuseIdentifier: "epCell")
-        for i in 0...character.episode.count - 1 {
-            cellStates.updateValue(.normal, forKey: i)
-        }
         tbEpisodes.reloadData()
     }
     @IBAction func pressedBack(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
 
@@ -49,6 +46,19 @@ extension EpisodeVC:UITableViewDelegate,UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+          cellHeights[indexPath] = cell.frame.height
+        }
+    
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 1 {
+        return cellHeights[indexPath] ?? 110
+        }else{
+        return 335
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
@@ -61,9 +71,7 @@ extension EpisodeVC:UITableViewDelegate,UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "epCell", for: indexPath) as! EpisodeCell
             cell.backgroundColor = .clear
             cell.selectionStyle = .none
-            if let cellState = cellStates[indexPath.row] {
-                cell.configure(with: character.episode[indexPath.row], delegate: self, state: cellState, needsDetaildInfo: true)
-            }
+            cell.configure(with: character.episode[indexPath.row], delegate: self, needsDetaildInfo: true, cellHeight: cellHeights[indexPath] ?? 110)
             return cell
         default:
             return UITableViewCell()
@@ -73,12 +81,15 @@ extension EpisodeVC:UITableViewDelegate,UITableViewDataSource {
 }
 extension EpisodeVC:EpisodeDelegate {
     func pressedEpisode(epName: String,state: EpisodeState) {
-         tbEpisodes.beginUpdates()
-         tbEpisodes.endUpdates()
         if let index = character.episode.firstIndex(of: epName) {
-            cellStates.updateValue(state, forKey: Int(index))
+            if state == .expanded {
+                cellHeights[IndexPath(row: Int(index), section: 1)] = 210
+            }else{
+                cellHeights[IndexPath(row:Int(index),section: 1)] = 110
+            }
         }
-         
+        tbEpisodes.beginUpdates()
+        tbEpisodes.endUpdates()
 
     }
     

@@ -13,10 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         UINavigationBar.appearance().barTintColor = UIColor(red:0.08, green:0.23, blue:0.62, alpha:1.0)
 
-            let window = UIWindow(frame: UIScreen.main.bounds)
-            self.window = window
-
-            window.rootViewController = Storyboards.Main.navVC
+           
 
 
         return true

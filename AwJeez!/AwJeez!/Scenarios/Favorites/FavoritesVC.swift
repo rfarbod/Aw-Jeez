@@ -8,10 +8,14 @@
 
 import UIKit
 import EmptyDataSet_Swift
+protocol FavoritesDelegate {
+    func pressedFav(character:JCharacter)
+}
 class FavoritesVC: UIViewController {
     @IBOutlet weak var tblFav: UITableView!
     var favorites = [RFavCharacter]()
     lazy var favVM = FavoritesVM(self)
+    var delegate:FavoritesDelegate? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -49,10 +53,8 @@ extension FavoritesVC:UITableViewDataSource,UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tblFav.scrollToRow(at: indexPath, at: .middle, animated: true)
-            let epVC = Storyboards.Main.epVC
-            epVC.character =  favVM.convertToJChar(character: favorites[indexPath.row])
-            self.modalPresentationStyle = .none
-            self.present(epVC, animated: true, completion: nil)
+            let character =  favVM.convertToJChar(character: favorites[indexPath.row])
+            delegate?.pressedFav(character: character)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

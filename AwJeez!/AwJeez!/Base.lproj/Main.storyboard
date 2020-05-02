@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JX3-lj-6bb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="nO5-Bh-Jir" kind="relationship" relationship="rootViewController" id="LUH-Ew-b3X"/>
+                        <segue destination="nO5-Bh-Jir" kind="relationship" relationship="rootViewController" id="3Wq-n3-hqE"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sxj-hf-XPg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -66,14 +67,29 @@
                     <view key="view" contentMode="scaleToFill" id="aaK-nZ-ktt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sh-yo-Iu4" customClass="SwipeMenuView" customModule="SwipeMenuViewController">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.86915074479999999" green="0.40268502969999997" blue="0.078518959360000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9sh-yo-Iu4" firstAttribute="top" secondItem="RlL-af-aSF" secondAttribute="top" id="Gy3-4l-JRN"/>
+                            <constraint firstItem="9sh-yo-Iu4" firstAttribute="leading" secondItem="RlL-af-aSF" secondAttribute="leading" id="Yhv-f1-Lxw"/>
+                            <constraint firstItem="RlL-af-aSF" firstAttribute="trailing" secondItem="9sh-yo-Iu4" secondAttribute="trailing" id="gsO-NC-Ua5"/>
+                            <constraint firstAttribute="bottom" secondItem="9sh-yo-Iu4" secondAttribute="bottom" id="hhU-Q5-dnv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RlL-af-aSF"/>
                     </view>
                     <navigationItem key="navigationItem" id="2ti-MW-ICh"/>
+                    <connections>
+                        <outlet property="swipeMenuView" destination="9sh-yo-Iu4" id="Pud-T2-lee"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xrv-T8-gKg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-794" y="877"/>
+            <point key="canvasLocation" x="-794.20289855072474" y="876.5625"/>
         </scene>
         <!--FavoritesVC-->
         <scene sceneID="Dfc-aM-gBJ">
@@ -126,12 +142,12 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLF-7a-NBU">
-                                <rect key="frame" x="5" y="30" width="50" height="50"/>
+                                <rect key="frame" x="5" y="35" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="dcj-gl-aWs"/>
                                     <constraint firstAttribute="height" constant="50" id="sTa-xY-j40"/>
                                 </constraints>
-                                <state key="normal" image="close.png"/>
+                                <state key="normal" image="arrowLeft.png"/>
                                 <connections>
                                     <action selector="pressedBack:" destination="z8H-4H-leG" eventType="touchUpInside" id="HV9-YU-QaL"/>
                                 </connections>
@@ -143,7 +159,7 @@
                             <constraint firstItem="Rob-pK-Yfh" firstAttribute="top" secondItem="vfd-Ml-Vk6" secondAttribute="top" id="Nke-GX-t16"/>
                             <constraint firstAttribute="bottom" secondItem="Rob-pK-Yfh" secondAttribute="bottom" id="V1K-WV-2A9"/>
                             <constraint firstItem="jLF-7a-NBU" firstAttribute="leading" secondItem="M2o-NX-XdE" secondAttribute="leading" constant="5" id="dYl-gI-HaO"/>
-                            <constraint firstItem="jLF-7a-NBU" firstAttribute="top" secondItem="M2o-NX-XdE" secondAttribute="top" constant="30" id="sF1-Rb-NeM"/>
+                            <constraint firstItem="jLF-7a-NBU" firstAttribute="top" secondItem="M2o-NX-XdE" secondAttribute="top" constant="35" id="sF1-Rb-NeM"/>
                             <constraint firstItem="Rob-pK-Yfh" firstAttribute="leading" secondItem="vfd-Ml-Vk6" secondAttribute="leading" id="zIG-xg-f6m"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vfd-Ml-Vk6"/>
@@ -159,6 +175,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="close.png" width="497" height="500"/>
+        <image name="arrowLeft.png" width="512" height="512"/>
     </resources>
 </document>
